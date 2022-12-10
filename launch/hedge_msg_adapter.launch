@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="rosbag" type="play" name="marvemind" output="screen" args="--clock $(find hedge_msg_adapter)/rosbag/rosbag-marvel.bag"/>
+  
+  <node pkg="hedge_msg_adapter" type="msg_adapter" name="msg_adapter" clear_params="true">
+    <rosparam command="load" file="$(find hedge_msg_adapter)/params/cov.yaml" />
+  </node>
+</launch>
