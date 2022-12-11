@@ -57,6 +57,7 @@ public:
 double last_x = 0;
 double last_y = 0;
 
+
 void pos_ang_callback(const marvelmind_nav::hedge_pos_ang::ConstPtr& pos_ang_msg)
   {
     // Populate header
@@ -70,8 +71,8 @@ void pos_ang_callback(const marvelmind_nav::hedge_pos_ang::ConstPtr& pos_ang_msg
       last_y = current_y;
     }
     
-    float lower_tresh = 0.1;
-    float upper_tresh = 0.4;
+    float lower_tresh = 0.4;
+    float upper_tresh = 0.8;
     // Populate position data
     if(abs(last_x - current_x) > lower_tresh) {
       pose_out_.pose.pose.position.x = current_x;
