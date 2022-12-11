@@ -78,7 +78,7 @@ void pos_ang_callback(const marvelmind_nav::hedge_pos_ang::ConstPtr& pos_ang_msg
       if(abs(last_x - current_x) > upper_tresh) {
         pose_out_.pose.pose.position.x = (current_x + last_x)/2;
       }
-      } else {
+    } else {
         pose_out_.pose.pose.position.x = last_x;
       }
       
@@ -87,7 +87,7 @@ void pos_ang_callback(const marvelmind_nav::hedge_pos_ang::ConstPtr& pos_ang_msg
       if(abs(last_y - current_y) > upper_tresh) {
         pose_out_.pose.pose.position.y = (current_y + last_y)/2;
       }
-      } else {
+    } else {
         pose_out_.pose.pose.position.y = last_y;
       }
 
